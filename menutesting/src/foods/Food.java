@@ -94,7 +94,7 @@ public abstract class Food {
 	}
 	public String toString() {
 		String s = "";
-		s += name + " has " + getCalories() + " calories\n";
+		s += name + "has " + getCalories() + " calories\n";
 		s += isHealthy() + "\n";
 		s += containsNuts() + "\n";
 		s += isVegetarian() + "\n";
