@@ -26,6 +26,7 @@ public class ListenTest extends JPanel implements ActionListener {
         super(new BorderLayout());
         test = new JLabel("");
         this.user = user;
+<<<<<<< HEAD
         picture = new JLabel(new ImageIcon("Were_heree.jpg"));
         picture.setPreferredSize(new Dimension(177, 122));
         test.setText("Hello " + user + ", what would you like to do");
@@ -96,6 +97,79 @@ public class ListenTest extends JPanel implements ActionListener {
     	picture.setVisible(false);
         test.setText(e.getActionCommand());
     	}
+=======
+        test.setBounds(100,100,300,300);
+        picture = new JLabel(new ImageIcon("Were_heree.jpg"));
+        picture.setPreferredSize(new Dimension(177, 122));
+        test.setText("Hello " + user + ", what would you like to do");
+        //Create the   buttons.
+        JButton birdButton = new JButton(birdString);
+        birdButton.setMnemonic(KeyEvent.VK_B);
+        birdButton.setActionCommand(birdString);
+
+        JButton catButton = new JButton(catString);
+        catButton.setMnemonic(KeyEvent.VK_C);
+        catButton.setActionCommand(catString);
+
+        JButton dogButton = new JButton(dogString);
+        dogButton.setMnemonic(KeyEvent.VK_D);
+        dogButton.setActionCommand(dogString);
+
+        JButton rabbitButton = new JButton(rabbitString);
+        rabbitButton.setMnemonic(KeyEvent.VK_R);
+        rabbitButton.setActionCommand(rabbitString);
+
+        JButton pigButton = new JButton(pigString);
+        pigButton.setMnemonic(KeyEvent.VK_P);
+        pigButton.setActionCommand(pigString);
+
+        //Group the   buttons.
+        ButtonGroup group = new ButtonGroup();
+        group.add(birdButton);
+        group.add(catButton);
+        group.add(dogButton);
+        group.add(rabbitButton);
+        group.add(pigButton);
+        //Register a listener for the   buttons.
+        birdButton.addActionListener(this);
+        catButton.addActionListener(this);
+        dogButton.addActionListener(this);
+        rabbitButton.addActionListener(this);
+        pigButton.addActionListener(this);
+
+        JPanel  Panel = new JPanel(new GridLayout(2, 2));
+         Panel.add(birdButton);
+         Panel.add(catButton);
+         Panel.add(dogButton);
+         Panel.add(rabbitButton);
+         Panel.add(pigButton);
+        
+        add( Panel, BorderLayout.LINE_START);
+        add(test,BorderLayout.PAGE_START);
+        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+    }
+    /** Listens to the   buttons. */
+    public void actionPerformed(ActionEvent e) {
+    	String help = e.getActionCommand();
+    	JComponent secondContentPane = new ListenTest(user);
+    	if(help.equals(birdString)) {
+    		secondContentPane = new DMG();
+    	}
+    	else if(help.equals(catString)) {
+    		secondContentPane = new WMG();
+    	}
+    	else if(help.equals(dogString)){
+    		secondContentPane = new RMG(user);	
+    	}
+    	else if(help.equals(pigString)) {
+    		secondContentPane = new FunctionTest();
+    	}
+    	else {
+    		secondContentPane = new ListenTest(user);
+    	}
+    	main.changeFrame(secondContentPane);
+    	main.frame.validate();
+>>>>>>> branch 'master' of https://github.com/Enigma56/ChefWaaaBot1.0.git
     }
     
 }
