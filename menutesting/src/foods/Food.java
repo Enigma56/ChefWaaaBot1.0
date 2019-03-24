@@ -4,13 +4,57 @@ import java.util.ArrayList;
 
 public abstract class Food {
 	private boolean gluten, vegetarian, nuts, healthy;
-	private int prepTime, caloriesPerServing, calories;
-	private double serving;
+	private int prepTime;
+	private double serving, caloriesPerServing, calories;
 
 	public Food(double serving, int prepTime) {
 
 		this.serving = serving;
 		this.prepTime = prepTime;
+	}
+	public void setCalories(double serving) {
+		calories = caloriesPerServing*serving;
+	}
+	public double getCalories() {
+		return calories;
+	}
+	public void setCalsPerServing(double val) {
+		caloriesPerServing = val;
+	}
+	public int getPrepTime() {
+		return prepTime;
+	}
+	
+	public double getServings() {
+		return serving;
+	}
+	public void setGluten(boolean bool) {
+		gluten = bool;
+	}
+	public boolean getGluten() {
+		return gluten;
+	}
+	public void setVeg(boolean bool) {
+		vegetarian = bool;
+	}
+	public boolean getVeg() {
+		return vegetarian;
+	}
+	public void setNut(boolean bool) {
+		nuts = bool;
+	}
+	public boolean getNut() {
+		return nuts;
+	}
+	public void setHealth(boolean bool) {
+		healthy = bool;
+	}
+	public boolean getHealth() {
+		return healthy;
+	}
+	
+	public double GetCaloriesPerServing() {
+		return caloriesPerServing;
 	}
 	
 	public String containsGluten() {
@@ -44,21 +88,14 @@ public abstract class Food {
 			return "This food is not healthy!";
 		}
 	}
-	
-	public int getPrepTime() {
-		return prepTime;
-	}
-	
-	public double getServings() {
-		return serving;
-	}
-	
-	public int caloriesPerServing() {
-		return caloriesPerServing;
-	}
-	
-	public int getCalories() {
-		return calories;
+	public String toString() {
+		String s = "";
+		s += "This food has " + getCalories() + " calories\n";
+		s += isHealthy() + "\n";
+		s += containsNuts() + "\n";
+		s += isVegetarian() + "\n";
+		s += containsGluten() + "\n";
+		return s;
 	}
 	
 

@@ -11,7 +11,8 @@ public class main {
 	static JFrame frame;
 	JTextField textfield;
 	
-	Food spaghetti = new Spaghetti(.5);
+	ArrayList<Food> shortFoods = new ArrayList<Food>();
+	ArrayList<Food> longFoods = new ArrayList<Food>();
 	
 	private static void createAndShowGUI() {
         //Create and set up the window.
