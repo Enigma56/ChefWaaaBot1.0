@@ -1,6 +1,5 @@
 package menutesting;
 
-<<<<<<< HEAD
 import foods.*;
 
 import java.util.ArrayList;
@@ -13,15 +12,6 @@ public class main {
 	JTextField textfield;
 	
 	Food spaghetti = new Spaghetti(.5);
-=======
-import javax.swing.JComponent;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
-
-public class main {
-	static JFrame frame;
-	JTextField textfield;
->>>>>>> branch 'master' of https://github.com/Enigma56/ChefWaaaBot1.0.git
 	
 	private static void createAndShowGUI() {
         //Create and set up the window.
