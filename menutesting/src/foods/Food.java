@@ -63,42 +63,42 @@ public abstract class Food {
 	
 	public String containsGluten() {
 		if(gluten == true)
-			return "This food contains gluten";
+			return "contains gluten";
 		else {
-			return "This food is gluten free";
+			return "is gluten free";
 		}
 	}
 	
 	public String isVegetarian() {
 		if(vegetarian == true)
-			return "This food is vegetarian";
+			return "is vegetarian";
 		else {
-			return "This food is not vegetarian";
+			return "is not vegetarian";
 		}
 	}
 	
 	public String containsNuts() {
 		if(nuts == true)
-			return "This food contains nuts";
+			return "contains nuts";
 		else {
-			return " THis food does not contain nuts";
+			return "does not contain nuts";
 		}
 	}
 	
 	public String isHealthy() {
 		if(healthy == true) 
-			return "This food is healthy";
+			return "is healthy";
 		else {
-			return "This food is not healthy";
+			return "is not healthy";
 		}
 	}
 	public String toString() {
 		String s = "";
-		s += name + "has " + getCalories() + " calories\n";
-		s += isHealthy() + "\n";
-		s += containsNuts() + "\n";
-		s += isVegetarian() + "\n";
-		s += containsGluten() + "\n";
+		s += name + " has " + getCalories() + " calories,\n";
+		s += isHealthy() + ",\n";
+		s += containsNuts() + ",\n";
+		s += isVegetarian() + ",\n";
+		s += "and "+containsGluten() + ".\n";
 		return s;
 	}
 	
