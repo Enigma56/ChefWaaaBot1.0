@@ -78,6 +78,7 @@ public class ListenTest extends JPanel implements ActionListener {
     /** Listens to the   buttons. */
     public void actionPerformed(ActionEvent e) {
     	String help = e.getActionCommand();
+    	JComponent secondContentPane = new ListenTest(user);
     	if(help.equals(birdString)) {
     		picture.setIcon(new ImageIcon("Were_heree.jpg"));
     		test.setText("");
@@ -85,17 +86,16 @@ public class ListenTest extends JPanel implements ActionListener {
     		picture.setVisible(true);
     	}
     	else if(help.equals(dogString)){
-    		JComponent secondContentPane = new RMG(user);
-            main.changeFrame(secondContentPane);
+    		secondContentPane = new RMG(user);	
     	}
     	else if(help.equals(pigString)) {
-    		JComponent resetContentPane = new FunctionTest();
-            main.changeFrame(resetContentPane);
+    		secondContentPane = new FunctionTest();
     	}
     	else {
-    	picture.setVisible(false);
-        test.setText(e.getActionCommand());
+    		secondContentPane = new ListenTest(user);
     	}
+    	main.changeFrame(secondContentPane);
+    	main.frame.validate();
     }
     
 }

@@ -27,7 +27,7 @@ public class FunctionTest extends JPanel implements ActionListener {
         add(test,BorderLayout.PAGE_START);
         add(textfield,BorderLayout.CENTER);
         add(xd,BorderLayout.PAGE_END);
-        setBorder(BorderFactory.createEmptyBorder(100,100,100,100));
+        setBorder(BorderFactory.createEmptyBorder(400,400,400,400));
 	}
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
