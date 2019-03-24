@@ -26,6 +26,7 @@ public class ListenTest extends JPanel implements ActionListener {
         super(new BorderLayout());
         test = new JLabel("");
         this.user = user;
+        test.setBounds(100,100,300,300);
         picture = new JLabel(new ImageIcon("Were_heree.jpg"));
         picture.setPreferredSize(new Dimension(177, 122));
         test.setText("Hello " + user + ", what would you like to do");
@@ -64,7 +65,7 @@ public class ListenTest extends JPanel implements ActionListener {
         rabbitButton.addActionListener(this);
         pigButton.addActionListener(this);
 
-        JPanel  Panel = new JPanel(new GridLayout(0, 1));
+        JPanel  Panel = new JPanel(new GridLayout(2, 2));
          Panel.add(birdButton);
          Panel.add(catButton);
          Panel.add(dogButton);
@@ -80,10 +81,10 @@ public class ListenTest extends JPanel implements ActionListener {
     	String help = e.getActionCommand();
     	JComponent secondContentPane = new ListenTest(user);
     	if(help.equals(birdString)) {
-    		picture.setIcon(new ImageIcon("Were_heree.jpg"));
-    		test.setText("");
-    		add(picture, BorderLayout.PAGE_START);
-    		picture.setVisible(true);
+    		secondContentPane = new DMG();
+    	}
+    	else if(help.equals(catString)) {
+    		secondContentPane = new WMG();
     	}
     	else if(help.equals(dogString)){
     		secondContentPane = new RMG(user);	

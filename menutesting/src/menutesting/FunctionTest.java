@@ -17,13 +17,13 @@ public class FunctionTest extends JPanel implements ActionListener {
 		super(new BorderLayout());
         test = new JLabel("");
         test.setText("Please enter your name");
+        test.setBounds(100,100,300,300);
         JButton xd = new JButton("Enter Name");
-        xd.setBounds(10, 10, 50, 50);
+        xd.setBounds(20, 20, 100, 100);
         xd.addActionListener(this);
         textfield= new JTextField();
-		textfield.setBounds(110, 50, 130, 30);
-		JPanel  Panel = new JPanel(new GridLayout(0, 1));
-		add( Panel, BorderLayout.LINE_START);
+		textfield.setBounds(220, 100, 260, 60);
+		
         add(test,BorderLayout.PAGE_START);
         add(textfield,BorderLayout.CENTER);
         add(xd,BorderLayout.PAGE_END);

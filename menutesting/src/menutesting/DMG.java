@@ -8,18 +8,17 @@ import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
-import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class RMG extends JPanel implements ActionListener {
-	 JLabel test;
-	 String Meal;
-	 JTextField textfield;
-	 static String timefordinner;
-	 JButton xd;
-	public RMG(String user) {
+public class DMG extends JPanel implements ActionListener {
+	JLabel test,meal1,meal2,meal3;
+	String Meal;
+	JTextField textfield;
+	static String timefordinner;
+	JButton xd;
+	public DMG() {
 		super(new BorderLayout());
 		test = new JLabel("");
         test.setText("How much time do you have for dinner? (in minutes)");
@@ -35,14 +34,15 @@ public class RMG extends JPanel implements ActionListener {
         add(textfield,BorderLayout.CENTER);
         add(xd,BorderLayout.PAGE_END);
         setBorder(BorderFactory.createEmptyBorder(400,400,400,400));
-        main.frame.validate();
 	}
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		timefordinner = textfield.getText(); 
 		Integer time; 
 		time = Integer.parseInt(timefordinner);
-		//generate meal and then set text to that
+		//code that generates and assigns the meals to meal1-3 
+		add(meal1,BorderLayout.NORTH);
+		add(meal2,BorderLayout.CENTER);
+		add(meal3,BorderLayout.SOUTH);
 		xd.setVisible(false);
 
 	}
